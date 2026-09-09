@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Verdant Estates | Premium Real Estate</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",Arial,sans-serif;
+    color:#183025;
+    background:#f5f8f3;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:94px;
+    z-index:20;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 8%;
+
+    border-bottom:1px solid rgba(255,255,255,.28);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:white;
+}
+
+.logo-mark{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#b8d89b;
+    color:#193a2b;
+
+    font-family:"Playfair Display",serif;
+    font-size:23px;
+    font-weight:700;
+
+    border-radius:50%;
+}
+
+.logo-name{
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    font-weight:600;
+    line-height:1;
+}
+
+.logo-sub{
+    font-size:8px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-top:5px;
+    opacity:.8;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:34px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+
+    position:relative;
+    transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#d5ebbd;
+}
+
+.nav-links a.active::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-30px;
+
+    height:2px;
+    background:#c5e2a8;
+}
+
+.nav-button{
+    padding:12px 20px;
+
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:3px;
+
+    background:#b7d497;
+    color:#193326;
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+    transition:.25s;
+}
+
+.nav-button:hover{
+    background:#d1e8b7;
+}
+
+.menu-button{
+    display:none;
+
+    width:40px;
+    height:40px;
+
+    border:1px solid rgba(255,255,255,.4);
+    background:transparent;
+    color:white;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height:680px;
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(19,48,36,.40),
+            rgba(19,48,36,.45)
+        ),
+        url("real-estate-hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(18,49,36,.50),
+            rgba(18,49,36,.12),
+            rgba(18,49,36,.30)
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    text-align:center;
+
+    width:90%;
+    max-width:1050px;
+
+    color:white;
+
+    margin-top:40px;
+}
+
+.eyebrow{
+    font-size:15px;
+    font-weight:500;
+
+    margin-bottom:14px;
+
+    letter-spacing:.2px;
+}
+
+.hero-title{
+    font-family:"Playfair Display",Georgia,serif;
+
+    font-size:clamp(46px,5.5vw,76px);
+
+    line-height:1.06;
+
+    font-weight:500;
+
+    letter-spacing:-2px;
+
+    text-shadow:0 2px 20px rgba(0,0,0,.16);
+}
+
+.hero-title span{
+    color:#d5eabf;
+}
+
+.hero-text{
+    max-width:650px;
+
+    margin:22px auto 0;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:rgba(255,255,255,.92);
+}
+
+.hero-btn{
+    margin-top:27px;
+
+    padding:15px 31px;
+
+    border:0;
+    border-radius:2px;
+
+    background:#b7d497;
+    color:#173426;
+
+    font-size:13px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.hero-btn:hover{
+    background:#d4eabb;
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   SLIDER ARROWS
+========================= */
+
+.arrow{
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:10;
+
+    width:48px;
+    height:48px;
+
+    border:0;
+    background:transparent;
+
+    color:white;
+
+    font-size:45px;
+    font-weight:200;
+
+    cursor:pointer;
+
+    opacity:.9;
+
+    transition:.2s;
+}
+
+.arrow:hover{
+    color:#d2e9bc;
+    transform:translateY(-50%) scale(1.08);
+}
+
+.arrow-left{
+    left:3.2%;
+}
+
+.arrow-right{
+    right:3.2%;
+}
+
+
+/* =========================
+   SLIDER DOTS
+========================= */
+
+.slider-dots{
+    position:absolute;
+
+    bottom:35px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.75);
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.dot.active{
+    width:11px;
+    height:11px;
+
+    background:#b7d497;
+
+    box-shadow:0 0 0 2px rgba(183,212,151,.3);
+}
+
+
+/* =========================
+   QUICK SEARCH
+========================= */
+
+.quick-search{
+    position:absolute;
+
+    z-index:15;
+
+    left:50%;
+    bottom:-46px;
+
+    transform:translateX(-50%);
+
+    width:min(940px,90%);
+
+    background:white;
+
+    padding:12px;
+
+    border-radius:4px;
+
+    box-shadow:0 15px 45px rgba(22,53,37,.15);
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr 1fr 120px;
+
+    gap:5px;
+}
+
+.search-box{
+    min-height:58px;
+
+    padding:10px 15px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    border-right:1px solid #e2e8df;
+}
+
+.search-label{
+    color:#87948a;
+
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:5px;
+}
+
+.search-value{
+    color:#284535;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.search-button{
+    border:0;
+    border-radius:3px;
+
+    background:#47755c;
+    color:white;
+
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.search-button:hover{
+    background:#315b44;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:120px 8% 90px;
+
+    background:#f5f8f3;
+}
+
+.intro-inner{
+    max-width:1100px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.section-label{
+    color:#6c936f;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.intro h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:42px;
+
+    font-weight:500;
+
+    color:#1d3c2d;
+}
+
+.intro p{
+    max-width:680px;
+
+    margin:18px auto 0;
+
+    color:#6d7970;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   PROPERTY PREVIEW
+========================= */
+
+.properties{
+    padding:0 8% 100px;
+
+    background:#f5f8f3;
+}
+
+.property-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.property-card{
+    background:white;
+
+    border:1px solid #e1e8df;
+
+    border-radius:4px;
+
+    overflow:hidden;
+
+    transition:.25s;
+}
+
+.property-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(28,65,43,.10);
+}
+
+.property-image{
+    width:100%;
+    height:215px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.property-content{
+    padding:17px;
+}
+
+.property-content h3{
+    font-family:"Playfair Display",serif;
+
+    color:#1d3c2d;
+
+    font-size:19px;
+}
+
+.property-location{
+    color:#819087;
+
+    font-size:10px;
+
+    margin-top:5px;
+}
+
+.property-details{
+    display:flex;
+
+    gap:16px;
+
+    padding-top:13px;
+    margin-top:13px;
+
+    border-top:1px solid #edf0eb;
+
+    color:#69776e;
+
+    font-size:9px;
+}
+
+.property-price{
+    color:#4d795d;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-top:14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:30px 8%;
+
+    background:#173426;
+
+    color:#dce8d9;
+}
+
+.footer-inner{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.footer-copy{
+    font-size:10px;
+
+    color:#a9bcae;
+}
+
+.footer-links{
+    display:flex;
+
+    gap:24px;
+}
+
+.footer-links a{
+    color:#d1ddd4;
+
+    text-decoration:none;
+
+    font-size:10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1050px){
+
+    .navbar{
+        padding:0 4%;
+    }
+
+    .nav-links{
+        gap:18px;
+    }
+
+    .nav-links a{
+        font-size:11px;
+    }
+
+    .quick-search{
+        width:94%;
+    }
+}
+
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+        left:20px;
+        right:20px;
+
+        padding:20px;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        gap:18px;
+
+        background:#18382a;
+
+        border:1px solid rgba(255,255,255,.15);
+
+        border-radius:4px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a.active::after{
+        display:none;
+    }
+
+    .nav-button{
+        display:none;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    .hero{
+        min-height:780px;
+    }
+
+    .quick-search{
+        grid-template-columns:1fr 1fr;
+
+        bottom:-100px;
+    }
+
+    .search-box{
+        border-bottom:1px solid #e2e8df;
+        border-right:0;
+    }
+
+    .search-button{
+        min-height:58px;
+    }
+
+    .property-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        height:75px;
+    }
+
+    .logo-name{
+        font-size:17px;
+    }
+
+    .hero{
+        min-height:820px;
+
+        background-position:center;
+    }
+
+    .hero-content{
+        margin-top:10px;
+    }
+
+    .eyebrow{
+        font-size:12px;
+    }
+
+    .hero-title{
+        font-size:43px;
+
+        letter-spacing:-1px;
+    }
+
+    .hero-text{
+        font-size:12px;
+    }
+
+    .arrow{
+        font-size:35px;
+    }
+
+    .arrow-left{
+        left:5px;
+    }
+
+    .arrow-right{
+        right:5px;
+    }
+
+    .quick-search{
+        grid-template-columns:1fr;
+
+        bottom:-250px;
+    }
+
+    .intro{
+        padding-top:310px;
+    }
+
+    .intro h2{
+        font-size:34px;
+    }
+
+    .property-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        gap:18px;
+        align-items:flex-start;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+
+        <div class="logo-mark">
+            V
+        </div>
+
+        <div>
+
+            <div class="logo-name">
+                Verdant Estates
+            </div>
+
+            <div class="logo-sub">
+                Real Estate
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#" class="active">
+            Home
+        </a>
+
+        <a href="#properties">
+            Properties
+        </a>
+
+        <a href="#buy">
+            Buy
+        </a>
+
+        <a href="#rent">
+            Rent
+        </a>
+
+        <a href="#sell">
+            Sell
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#agents">
+            Agents
+        </a>
+
+        <a href="#about">
+            About Us
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <div>
+
+        <button
+            class="nav-button"
+            onclick="contactAgent()">
+
+            Talk to an Agent
+
+        </button>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+
+    <button
+        class="arrow arrow-left"
+        onclick="previousSlide()">
+
+        ‹
+
+    </button>
+
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Thoughtfully chosen homes. Beautifully lived.
+        </div>
+
+
+        <h1 class="hero-title">
+
+            Find A Home
+            <br>
+
+            <span>That Feels Like Yours.</span>
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            Discover exceptional homes, apartments and
+            private residences in some of the most desirable
+            neighbourhoods across the city.
+
+        </p>
+
+
+        <button
+            class="hero-btn"
+            onclick="exploreProperties()">
+
+            Explore Properties
+
+        </button>
+
+    </div>
+
+
+    <button
+        class="arrow arrow-right"
+        onclick="nextSlide()">
+
+        ›
+
+    </button>
+
+
+    <div class="slider-dots">
+
+        <span class="dot active" onclick="goToSlide(0)"></span>
+
+        <span class="dot" onclick="goToSlide(1)"></span>
+
+        <span class="dot" onclick="goToSlide(2)"></span>
+
+        <span class="dot" onclick="goToSlide(3)"></span>
+
+        <span class="dot" onclick="goToSlide(4)"></span>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="quick-search">
+
+        <div class="search-box">
+
+            <span class="search-label">
+                Location
+            </span>
+
+            <span class="search-value">
+                Prayagraj, Uttar Pradesh
+            </span>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span class="search-label">
+                Property
+            </span>
+
+            <span class="search-value">
+                Apartment
+            </span>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span class="search-label">
+                Purpose
+            </span>
+
+            <span class="search-value">
+                Buy
+            </span>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span class="search-label">
+                Budget
+            </span>
+
+            <span class="search-value">
+                ₹50L — ₹2Cr
+            </span>
+
+        </div>
+
+
+        <button
+            class="search-button"
+            onclick="searchProperties()">
+
+            Search
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro" id="about">
+
+    <div class="intro-inner">
+
+        <div class="section-label">
+            A Better Way Home
+        </div>
+
+        <h2>
+            Property search,
+            made personal.
+        </h2>
+
+        <p>
+
+            From quiet family homes to contemporary
+            city residences, we bring together properties
+            selected for their location, design and
+            long-term value.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROPERTY PREVIEW
+===================================================== -->
+
+<section
+    class="properties"
+    id="properties">
+
+    <div class="property-grid">
+
+
+        <article class="property-card">
+
+            <img
+                src="property-1.jpg"
+                class="property-image"
+                alt="Luxury modern villa">
+
+            <div class="property-content">
+
+                <h3>
+                    The Garden Residence
+                </h3>
+
+                <div class="property-location">
+                    Civil Lines, Prayagraj
+                </div>
+
+                <div class="property-details">
+
+                    <span>
+                        4 Beds
+                    </span>
+
+                    <span>
+                        3 Baths
+                    </span>
+
+                    <span>
+                        2,850 sq.ft
+                    </span>
+
+                </div>
+
+                <div class="property-price">
+                    ₹1.85 Cr
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="property-card">
+
+            <img
+                src="property-2.jpg"
+                class="property-image"
+                alt="Premium apartment">
+
+            <div class="property-content">
+
+                <h3>
+                    Greenview Heights
+                </h3>
+
+                <div class="property-location">
+                    Gomti Nagar, Lucknow
+                </div>
+
+                <div class="property-details">
+
+                    <span>
+                        3 Beds
+                    </span>
+
+                    <span>
+                        2 Baths
+                    </span>
+
+                    <span>
+                        1,920 sq.ft
+                    </span>
+
+                </div>
+
+                <div class="property-price">
+                    ₹1.25 Cr
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="property-card">
+
+            <img
+                src="property-3.jpg"
+                class="property-image"
+                alt="Contemporary home">
+
+            <div class="property-content">
+
+                <h3>
+                    The Courtyard House
+                </h3>
+
+                <div class="property-location">
+                    Naini, Prayagraj
+                </div>
+
+                <div class="property-details">
+
+                    <span>
+                        3 Beds
+                    </span>
+
+                    <span>
+                        3 Baths
+                    </span>
+
+                    <span>
+                        2,200 sq.ft
+                    </span>
+
+                </div>
+
+                <div class="property-price">
+                    ₹98 Lakh
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact">
+
+    <div class="footer-inner">
+
+        <div class="footer-copy">
+
+            © 2026 Verdant Estates. All rights reserved.
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#properties">
+                Properties
+            </a>
+
+            <a href="#buy">
+                Buy
+            </a>
+
+            <a href="#rent">
+                Rent
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#agents">
+                Agents
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("open");
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchProperties(){
+
+    alert(
+        "Property search opened.\n\n" +
+        "Location: Prayagraj\n" +
+        "Type: Apartment\n" +
+        "Purpose: Buy"
+    );
+
+}
+
+
+/* =========================
+   EXPLORE
+========================= */
+
+function exploreProperties(){
+
+    document
+        .getElementById("properties")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================
+   AGENT
+========================= */
+
+function contactAgent(){
+
+    alert(
+        "An Estateora property consultant " +
+        "will be available here."
+    );
+
+}
+
+
+/* =========================
+   HERO SLIDER
+========================= */
+
+const slides = [
+
+    "real-estate-hero.jpg",
+
+    "real-estate-hero-2.jpg",
+
+    "real-estate-hero-3.jpg",
+
+    "real-estate-hero-4.jpg",
+
+    "real-estate-hero-5.jpg"
+
+];
+
+let currentSlide = 0;
+
+
+function updateSlide(){
+
+    const hero =
+        document.querySelector(".hero");
+
+    hero.style.backgroundImage =
+        "linear-gradient(rgba(19,48,36,.40),rgba(19,48,36,.45)),url('" +
+        slides[currentSlide] +
+        "')";
+
+
+    document
+        .querySelectorAll(".dot")
+        .forEach((dot,index)=>{
+
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        });
+
+}
+
+
+function nextSlide(){
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
+
+    updateSlide();
+
+}
+
+
+function previousSlide(){
+
+    currentSlide--;
+
+    if(currentSlide < 0){
+        currentSlide = slides.length - 1;
+    }
+
+    updateSlide();
+
+}
+
+
+function goToSlide(index){
+
+    currentSlide = index;
+
+    updateSlide();
+
+}
+
+
+/* AUTO SLIDER */
+
+setInterval(
+    nextSlide,
+    6000
+);
+
+</script>
+
+</body>
+</html>
