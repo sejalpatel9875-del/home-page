@@ -53,7 +53,7 @@ body{
 }
 
 /* =====================================================
-   NAVBAR
+   NAVBAR (CLEAN - NO CLUTTERED MENUS)
 ===================================================== */
 .navbar{
     position: fixed;
@@ -66,7 +66,7 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
-    background: rgba(19, 48, 36, 0.85);
+    background: rgba(19, 48, 36, 0.92);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -114,42 +114,10 @@ body{
     font-weight: 500;
 }
 
-.nav-links{
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.nav-links a{
-    color: #e5ede7;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    position: relative;
-    padding: 6px 0;
-    transition: var(--transition);
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-    color: var(--accent-hover);
-}
-
-.nav-links a.active::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 2px;
-    background: var(--accent);
-    border-radius: 2px;
-}
-
 .nav-cta-wrapper{
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .nav-button{
@@ -166,31 +134,13 @@ body{
     align-items: center;
     justify-content: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .nav-button:hover{
     background: var(--accent-hover);
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(184, 216, 155, 0.4);
-}
-
-.menu-button{
-    display: none;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 22px;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.menu-button:active{
-    background: rgba(255, 255, 255, 0.2);
 }
 
 /* =====================================================
@@ -205,7 +155,7 @@ body{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 110px 6% 90px;
+    padding: 120px 6% 90px;
     background-image:
         linear-gradient(rgba(19,48,36,0.52), rgba(19,48,36,0.65)),
         url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80");
@@ -898,7 +848,7 @@ footer{
 }
 
 /* =====================================================
-   RESPONSIVE MEDIA QUERIES (MOBILE FIRST ERGONOMICS)
+   RESPONSIVE MEDIA QUERIES (CLEAN HEADER - NO CLUTTER)
 ===================================================== */
 @media(max-width: 1024px){
     .navbar{
@@ -917,70 +867,6 @@ footer{
 }
 
 @media(max-width: 868px){
-    .nav-links{
-        display: none;
-        position: fixed;
-        top: 84px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 28px 6% 40px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: rgba(15, 33, 25, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        overflow-y: auto;
-        z-index: 99;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        animation: fadeInSlide .25s ease forwards;
-    }
-
-    @keyframes fadeInSlide{
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .nav-links.open{
-        display: flex;
-    }
-
-    .nav-links a{
-        font-size: 18px;
-        font-weight: 600;
-        padding: 16px 8px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        color: #f0f7f2;
-    }
-
-    .nav-links a.active::after{
-        display: none;
-    }
-
-    .nav-links .mobile-menu-cta{
-        margin-top: 24px;
-        display: block;
-        width: 100%;
-        padding: 15px;
-        text-align: center;
-        background: var(--accent);
-        color: #173727;
-        font-weight: 700;
-        font-size: 16px;
-        border-radius: var(--radius-sm);
-        border: 0;
-        cursor: pointer;
-    }
-
-    .nav-button{
-        display: none;
-    }
-
-    .menu-button{
-        display: flex;
-    }
-
     .arrow{
         width: 40px;
         height: 40px;
@@ -999,8 +885,8 @@ footer{
 
 @media(max-width: 640px){
     .navbar{
-        height: 72px;
-        padding: 0 5%;
+        height: 70px;
+        padding: 0 4%;
     }
 
     .logo-mark{
@@ -1010,25 +896,26 @@ footer{
     }
 
     .logo-name{
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .logo-sub{
         font-size: 8px;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
     }
 
-    .nav-links{
-        top: 72px;
+    .nav-button{
+        padding: 9px 15px;
+        font-size: 12px;
     }
 
     .hero{
         min-height: auto;
-        padding: 110px 5% 50px;
+        padding: 105px 5% 45px;
     }
 
     .eyebrow{
-        font-size: 12px;
+        font-size: 11px;
         padding: 5px 12px;
     }
 
@@ -1060,7 +947,7 @@ footer{
     }
 
     .arrow{
-        display: none; /* Swipe & dots take over on mobile screens for cleaner interface */
+        display: none; /* Swipe & dots take over on mobile */
     }
 
     .slider-dots{
@@ -1090,11 +977,11 @@ footer{
     }
 
     .intro{
-        padding: 60px 5% 40px;
+        padding: 55px 5% 35px;
     }
 
     .intro h2{
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .intro p{
@@ -1154,7 +1041,7 @@ footer{
 <body>
 
 <!-- =====================================================
-     NAVBAR
+     NAVBAR (CLEAN - NO CLUTTERED MENUS)
 ===================================================== -->
 <header class="navbar">
     <a href="#" class="logo">
@@ -1165,23 +1052,9 @@ footer{
         </div>
     </a>
 
-    <nav class="nav-links" id="navLinks">
-        <a href="#" class="active" onclick="closeMenu()">Home</a>
-        <a href="#search" onclick="closeMenu()">Search</a>
-        <a href="#properties" onclick="closeMenu()">Properties</a>
-        <a href="#about" onclick="closeMenu()">About Us</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
-        <button class="mobile-menu-cta" onclick="openAgentModal(); closeMenu();">
-            💬 Talk to an Agent
-        </button>
-    </nav>
-
     <div class="nav-cta-wrapper">
         <button class="nav-button" onclick="openAgentModal()">
             Talk to an Agent
-        </button>
-        <button class="menu-button" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle Menu">
-            ☰
         </button>
     </div>
 </header>
@@ -1413,7 +1286,7 @@ footer{
 </section>
 
 <!-- =====================================================
-     CONTACT MODAL (MOBILE BOTTOM-SHEET STYLE)
+     CONTACT MODAL
 ===================================================== -->
 <div class="modal-backdrop" id="agentModal" onclick="handleBackdropClick(event)">
     <div class="modal-box">
@@ -1462,24 +1335,6 @@ footer{
 </footer>
 
 <script>
-/* =====================================================
-   MOBILE MENU LOGIC
-===================================================== */
-const navLinks = document.getElementById("navLinks");
-const menuBtn = document.getElementById("menuBtn");
-
-function toggleMenu(){
-    const isOpen = navLinks.classList.toggle("open");
-    menuBtn.innerHTML = isOpen ? "✕" : "☰";
-    document.body.style.overflow = isOpen ? "hidden" : "";
-}
-
-function closeMenu(){
-    navLinks.classList.remove("open");
-    menuBtn.innerHTML = "☰";
-    document.body.style.overflow = "";
-}
-
 /* =====================================================
    HERO SLIDER WITH TOUCH SWIPE SUPPORT
 ===================================================== */
@@ -1561,7 +1416,6 @@ function executeSearch(){
     const purpose = document.getElementById("searchPurpose").value;
 
     const cards = document.querySelectorAll(".property-card");
-    let matchCount = 0;
 
     cards.forEach(card => {
         const cat = card.getAttribute("data-category");
@@ -1573,7 +1427,6 @@ function executeSearch(){
 
         if (matches){
             card.style.display = "flex";
-            matchCount++;
         } else {
             card.style.display = "none";
         }
